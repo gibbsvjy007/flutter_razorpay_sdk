@@ -28,7 +28,8 @@ A Flutter plugin to integrate razorpay SDK for Android and iOS.
 
 ### Show some :heart: and star the repo to support the project
 
-* Please note this is a plugin only. This plugin has used the Android SDK
+* Please note this is a plugin only. This plugin has used the Android SDK.
+Note: This plugin is still under development. Feedback and Pull Requests are most welcome!
 
 
 ## Instaling
@@ -38,7 +39,7 @@ To use this plugin :
 
 Add this in pubspec.yaml
 ```
-  flutter_razorpay_sdk: ^0.0.2
+  flutter_razorpay_sdk: ^0.1.0
 ```
 
 ## Usage

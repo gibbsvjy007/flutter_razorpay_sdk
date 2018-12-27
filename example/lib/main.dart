@@ -1,8 +1,8 @@
+// Copyright 2018 The SevenRE Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:flutter/cupertino.dart';
-
-import 'package:flutter/services.dart';
 import 'package:flutter_razorpay_sdk/flutter_razorpay_sdk.dart';
 
 void main() => runApp(new MyApp());
@@ -18,8 +18,11 @@ class _MyAppState extends State<MyApp> {
     super.initState();
   }
 
+  // open razorpay payment dialog. Theme and image keys are optional. if this is not passed then it
+  // will grab the image url and theme color set in the razorpay dashboard
+  // Please replace your test api key in order to test the plugin
   Future<Null> _showNativeView() async {
-    String API_KEY_HERE = "rzp_test_p7XqWYIyoY4yYG";
+    String apiKey = "API_KEY_HERE";
 
     Map<String, dynamic> options = new Map();
     options.putIfAbsent("name", () => "Laptop");
@@ -30,7 +33,7 @@ class _MyAppState extends State<MyApp> {
     options.putIfAbsent("contact", () => "+919825123456");
 
     options.putIfAbsent("theme", () => "#4D68FF");
-    options.putIfAbsent("api_key", () => API_KEY_HERE);
+    options.putIfAbsent("api_key", () => apiKey);
 
     Map<dynamic,dynamic> paymentResponse = new Map();
     paymentResponse = await FlutterRazorpaySdk.openPaymentDialog(options);
