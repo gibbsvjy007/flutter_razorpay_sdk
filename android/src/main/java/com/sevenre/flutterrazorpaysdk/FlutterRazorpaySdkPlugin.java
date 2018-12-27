@@ -92,7 +92,6 @@ public class FlutterRazorpaySdkPlugin implements MethodCallHandler, PluginRegist
                     paymentResult.success(data);
                     break;
             }
-            paymentResult.error("PAYMENT_FAILURE", "Failed while launching activity", null);
             paymentResult = null;
             arguments = null;
             return true;

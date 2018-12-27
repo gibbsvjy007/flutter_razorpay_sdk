@@ -8,12 +8,14 @@ import 'package:flutter/services.dart';
 
 // FlutterRazorpaySdk
 class FlutterRazorpaySdk {
+  /// define method channel name here.
   static const MethodChannel _channel =
       const MethodChannel('flutter_razorpay_sdk');
 
 
-  // open razorpay payment dialog. Theme and image keys are optional.
-  // Please replace your test api key in order to test the plugin
+  /// open razorpay payment dialog. Theme and image keys are optional.
+  ///
+  /// Please replace your test api key in order to test the plugin
   static Future<Map<dynamic, dynamic>>  openPaymentDialog(Map<dynamic, dynamic> map) async {
    Map<dynamic, dynamic> response = new Map();
 

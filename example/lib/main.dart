@@ -18,11 +18,12 @@ class _MyAppState extends State<MyApp> {
     super.initState();
   }
 
-  // open razorpay payment dialog. Theme and image keys are optional. if this is not passed then it
-  // will grab the image url and theme color set in the razorpay dashboard
-  // Please replace your test api key in order to test the plugin
+  /// open razorpay payment dialog. Theme and image keys are optional.
+  ///
+  /// If this is not passed then it will grab the image url and theme color set in the razorpay dashboard
+  /// Please replace your test api key in order to test the plugin
   Future<Null> _showNativeView() async {
-    String apiKey = "API_KEY_HERE";
+    String apiKey = "rzp_test_p7XqWYIyoY4yYG";
 
     Map<String, dynamic> options = new Map();
     options.putIfAbsent("name", () => "Laptop");

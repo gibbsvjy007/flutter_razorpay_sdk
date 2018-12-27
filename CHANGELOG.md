@@ -1,3 +1,3 @@
-## 0.1.0
+## 0.1.1
 
-* Updated readme.
+* Resolved App crashing issue.
