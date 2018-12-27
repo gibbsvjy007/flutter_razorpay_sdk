@@ -8,14 +8,15 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 A Flutter plugin to integrate razorpay SDK
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'https://github.com/gibbsvjy007/flutter_razorpay_sdk.git'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.author           = { 'Vijay Rathod' => 'vijay.rathod@seven-re.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  
+  s.dependency 'razorpay-pod','~> 1.0.26'
+
   s.ios.deployment_target = '8.0'
 end
 
