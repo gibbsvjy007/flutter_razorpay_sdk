@@ -13,37 +13,28 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-
   @override
   void initState() {
     super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      platformVersion = await FlutterRazorpaySdk.platformVersion;
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
   }
 
   Future<Null> _showNativeView() async {
-    String msg = await FlutterRazorpaySdk.openPaymentDialog(type: 'CARD');
-    print("SUCCESS CALLBACK " + msg);
+    String API_KEY_HERE = "rzp_test_p7XqWYIyoY4yYG";
+
+    Map<String, dynamic> options = new Map();
+    options.putIfAbsent("name", () => "Laptop");
+    options.putIfAbsent("image", () => "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
+    options.putIfAbsent("description", () => "Testing razorpay transaction");
+    options.putIfAbsent("amount", () => "100");
+    options.putIfAbsent("email", () => "test@gmail.com");
+    options.putIfAbsent("contact", () => "+919825123456");
+
+    options.putIfAbsent("theme", () => "#4D68FF");
+    options.putIfAbsent("api_key", () => API_KEY_HERE);
+
+    Map<dynamic,dynamic> paymentResponse = new Map();
+    paymentResponse = await FlutterRazorpaySdk.openPaymentDialog(options);
+    print("response $paymentResponse");
   }
 
   @override
@@ -51,20 +42,19 @@ class _MyAppState extends State<MyApp> {
     return new MaterialApp(
       home: new Scaffold(
         appBar: new AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Razorpay Plugin'),
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            new Center(
-              child: new Text('Running on: $_platformVersion\n'),
-            ),
-            new CupertinoButton(
-                child: new Text("Pay with RazorPay"),
-                onPressed: _showNativeView,
-                borderRadius: BorderRadius.all(new Radius.circular(5.0)))
-          ],
+        body: Center(child:
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+                  MaterialButton(
+                  color: Colors.blue,
+                  child: new Text("Pay with RazorPay", style: TextStyle(color: Colors.white)),
+                  onPressed: _showNativeView)
+            ],
+          ),
         )
 
       ),
