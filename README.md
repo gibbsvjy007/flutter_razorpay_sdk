@@ -20,6 +20,9 @@ A Flutter plugin to integrate razorpay SDK for Android and iOS.
     <td>
       <img src = "https://github.com/gibbsvjy007/flutter_razorpay_sdk/blob/master/2.PNG" height="350">
     </td>
+    <td>
+      <img src = "https://github.com/gibbsvjy007/flutter_razorpay_sdk/blob/master/3.PNG" height="350">
+    </td>
   </tr>
  </table>
 
