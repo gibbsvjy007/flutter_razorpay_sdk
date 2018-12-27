@@ -15,10 +15,10 @@ A Flutter plugin to integrate razorpay SDK for Android and iOS.
 <table>
   <tr>
      <td>
-       <img src = "https://github.com/gibbsvjy007/flutter_razorpay_sdk/blob/master/1.png" height="350">
+       <img src = "https://github.com/gibbsvjy007/flutter_razorpay_sdk/blob/master/1.PNG" height="350">
     </td>
     <td>
-      <img src = "https://github.com/gibbsvjy007/flutter_razorpay_sdk/blob/master/2.png" height="350">
+      <img src = "https://github.com/gibbsvjy007/flutter_razorpay_sdk/blob/master/2.PNG" height="350">
     </td>
   </tr>
  </table>
@@ -33,11 +33,9 @@ To use this plugin :
 
 * add the dependency to your [pubspec.yaml](https://github.com/gibbsvjy007/flutter_razorpay_sdk) file.
 
-```yaml
-  dependencies:
-    flutter:
-      sdk: flutter
-    flutter_razorpay_sdk:
+Add this in pubspec.yaml
+```
+  flutter_razorpay_sdk: ^0.0.2
 ```
 
 ## Usage
