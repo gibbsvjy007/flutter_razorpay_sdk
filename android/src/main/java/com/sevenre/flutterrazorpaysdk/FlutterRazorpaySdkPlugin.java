@@ -3,6 +3,8 @@ package com.sevenre.flutterrazorpaysdk;
 import android.app.Activity;
 import android.content.Intent;
 import android.widget.Toast;
+
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import io.flutter.plugin.common.MethodCall;
@@ -51,6 +53,10 @@ public class FlutterRazorpaySdkPlugin implements MethodCallHandler, PluginRegist
 
             if (arguments.get("image") != null)
                 razorpayIntent.putExtra(RazorpayActivity.IMAGE, (String) arguments.get("image"));
+
+            if (arguments.get("notes") != null) {
+                razorpayIntent.putExtra(RazorpayActivity.NOTES, (Serializable) arguments.get("notes"));
+            }
 
             razorpayIntent.putExtra(RazorpayActivity.DESCRIPTION, (String) arguments.get("description"));
             razorpayIntent.putExtra(RazorpayActivity.AMOUNT, (String) arguments.get("amount"));

@@ -11,6 +11,10 @@ import com.razorpay.PaymentResultListener;
 
 import org.json.JSONObject;
 
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+
 public class RazorpayActivity extends Activity implements PaymentResultListener {
     private static final String TAG = RazorpayActivity.class.getSimpleName();
     public static String NAME = "name";
@@ -25,6 +29,7 @@ public class RazorpayActivity extends Activity implements PaymentResultListener 
     public static String RAZORPAY_KEY = "api_key";
     public static String CURRENCY = "currency";
     public static String COLOR = "color";
+    public static String NOTES = "notes";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,7 @@ public class RazorpayActivity extends Activity implements PaymentResultListener 
      *
      * @param intent
      */
+    @SuppressWarnings("unchecked")
     public void startPayment(Intent intent) {
         final Activity activity = this;
 
@@ -62,6 +68,19 @@ public class RazorpayActivity extends Activity implements PaymentResultListener 
             color.put(COLOR, intent.getStringExtra(THEME));
             if (intent.getStringExtra(THEME) != null)
                 options.put(THEME, color);
+
+            // support for additional notes. maximum 15 keys are allowed
+            if (intent.getSerializableExtra(NOTES) != null) {
+                JSONObject notes = new JSONObject();
+                Serializable noteObj = intent.getSerializableExtra(NOTES);
+                HashMap<String, String> noteHash = (HashMap<String, String>) noteObj;
+                for (Map.Entry<String, String> entry : noteHash.entrySet()) {
+                    String key = entry.getKey();
+                    String value = entry.getValue();
+                    notes.put(key, value);
+                }
+                options.put(NOTES, notes);
+            }
 
             // configure contact details
             JSONObject preFill = new JSONObject();

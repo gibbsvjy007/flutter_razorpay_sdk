@@ -49,23 +49,29 @@ To call payment procedure:
 import 'package:flutter_razorpay_sdk/flutter_razorpay_sdk.dart';
 
 Future<Null> _showNativeView() async {
-    String API_KEY_HERE = "API_KEY_HERE";
+    String apiKey = "API_KEY_HERE";
+    Map<String, String> notes = new Map();
+    notes.putIfAbsent('billing_address', () => "Somewhere on earth");
+    notes.putIfAbsent('shipping_address', () => "Somewhere near India");
 
     Map<String, dynamic> options = new Map();
     options.putIfAbsent("name", () => "Laptop");
-    options.putIfAbsent("image", () => "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
+    options.putIfAbsent("image", () => "https://s3.amazonaws.com/rzp-mobile/images/rzp.png"); // optional arguement
     options.putIfAbsent("description", () => "Testing razorpay transaction");
     options.putIfAbsent("amount", () => "100");
     options.putIfAbsent("email", () => "test@gmail.com");
     options.putIfAbsent("contact", () => "+919825123456");
 
-    options.putIfAbsent("theme", () => "#4D68FF");
-    options.putIfAbsent("api_key", () => API_KEY_HERE);
+    // additional notes support. https://docs.razorpay.com/docs/notes
+    options.putIfAbsent("notes", () => notes);
+
+    options.putIfAbsent("theme", () => "#4D68FF"); // optional arguement
+    options.putIfAbsent("api_key", () => apiKey);
 
     Map<dynamic,dynamic> paymentResponse = new Map();
     paymentResponse = await FlutterRazorpaySdk.openPaymentDialog(options);
     print("response $paymentResponse");
-}
+  }
 
 ```
 Response :

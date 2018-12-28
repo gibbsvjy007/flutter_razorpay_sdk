@@ -1,3 +1,3 @@
-## 0.1.2
+## 0.1.3
 
-* iOS release. Added latest razorpay sdk version.
+* Notes support (https://docs.razorpay.com/docs/notes). Requested feature. iOS implementation is pending for notes support
