@@ -17,6 +17,6 @@ A Flutter plugin to integrate razorpay SDK
   s.dependency 'Flutter'
   s.dependency 'razorpay-pod','~> 1.0.26'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 end
 

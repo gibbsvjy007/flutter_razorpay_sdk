@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
   /// If this is not passed then it will grab the image url and theme color set in the razorpay dashboard
   /// Please replace your test api key in order to test the plugin
   Future<Null> _showNativeView() async {
-    String apiKey = "rzp_test_p7XqWYIyoY4yYG";
+    String apiKey = "API_KEY_HERE";
 
     Map<String, dynamic> options = new Map();
     options.putIfAbsent("name", () => "Laptop");
