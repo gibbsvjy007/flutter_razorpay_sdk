@@ -39,7 +39,7 @@ To use this plugin :
 
 Add this in pubspec.yaml
 ```
-  flutter_razorpay_sdk: ^0.1.1
+  flutter_razorpay_sdk: ^0.1.2
 ```
 
 ## Usage

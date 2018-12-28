@@ -1,6 +1,6 @@
 name: flutter_razorpay_sdk
 description: A Flutter plugin to integrate razorpay payment SDK. Supports iOS and Android.
-version: 0.1.1
+version: 0.1.2
 author: Vijay Rathod<vijay.rathod@seven-re.com>
 homepage: https://github.com/gibbsvjy007/flutter_razorpay_sdk.git
 

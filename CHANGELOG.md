@@ -1,3 +1,3 @@
-## 0.1.1
+## 0.1.2
 
-* Resolved App crashing issue.
+* iOS release. Added latest razorpay sdk version.
