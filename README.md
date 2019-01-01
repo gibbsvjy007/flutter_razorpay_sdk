@@ -39,8 +39,17 @@ To use this plugin :
 
 Add this in pubspec.yaml
 ```
-  flutter_razorpay_sdk: ^0.1.2
+  flutter_razorpay_sdk: ^0.1.4
 ```
+
+## Note
+
+### iOS setup
+
+For iOS you will need to install the followings.
+
+- Swift 4.2
+- Xcode 10 or above
 
 ## Usage
 To call payment procedure:
